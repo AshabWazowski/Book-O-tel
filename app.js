@@ -38,7 +38,7 @@ app.get('/result', async (req, res)=>{
 
     try {
           const response =  await axios.request(options);
-          console.log(response.data);
+
           res.send(response.data);
         } catch (error) {
           console.error(error);
@@ -49,9 +49,9 @@ app.get('/result', async (req, res)=>{
 
 app.post('/', async (req, res)=>{
     const data = req.body.values;
-    console.log(data);
+
     arr[0] = data;
-    console.log(arr);
+
 })
 
 app.get('/', async (req, res)=>{
@@ -67,7 +67,6 @@ app.get('/', async (req, res)=>{
   
   try {
     const response = await axios.request(options);
-    console.log(response.data);
     res.send(response.data)
   } catch (error) {
     console.error(error);
