@@ -40,7 +40,8 @@ app.get('/result', async (req, res)=>{
           const response =  await axios.request(options);
 
           res.send(response.data);
-        } catch (error) {
+        } 
+        catch (error) {
           console.error(error);
         }
 
@@ -57,18 +58,19 @@ app.post('/', async (req, res)=>{
 app.get('/', async (req, res)=>{
   const options = {
     method: 'GET',
-    url: 'https://currency-converter219.p.rapidapi.com/currencies',
+    url: 'https://currency-converter18.p.rapidapi.com/api/v1/supportedCurrencies',
     headers: {
-      'content-type': 'application/octet-stream',
-      'X-RapidAPI-Key': 'a4ba6b38f3mshfb840721b5f4233p17b123jsn8688ad109155',
-      'X-RapidAPI-Host': 'currency-converter219.p.rapidapi.com'
+      'X-RapidAPI-Key': '09827575a8mshed3aac8b9523556p10d839jsn040db647735c',
+      'X-RapidAPI-Host': 'currency-converter18.p.rapidapi.com'
     }
   };
   
   try {
     const response = await axios.request(options);
     res.send(response.data)
-  } catch (error) {
+    // console.log(response.data);
+  } 
+  catch (error) {
     console.error(error);
   }
 })
