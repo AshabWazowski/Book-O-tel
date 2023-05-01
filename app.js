@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 const arr = [];
+const contactDetails = [];
 
 const port = 8080;
 
@@ -75,6 +76,11 @@ app.get('/', async (req, res)=>{
   }
 })
 
+app.post('/contact',(req, res)=>{
+  const data = req.body.values;
+    contactDetails.push(data);
+    // console.log(contactDetails);
+})
 
 
 
